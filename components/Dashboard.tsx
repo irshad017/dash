@@ -1,23 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Bar, Line, Pie } from "react-chartjs-2";
+import { Line, Pie } from "react-chartjs-2";
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement, BarElement } from "chart.js";
-import axios from "axios";
 import socket from "@/utils/socket";
 
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement, BarElement);
 
-interface ScrapedData {
-    title: string;
-    price: number;
-}
+
 
 const Dashboard: React.FC = () => {
     const [webData, setWebData] = useState<number[]>([]);
     const [webTimes, setWebTimes] = useState<string[]>([]);
-
-    const [scrapedData, setScrapedData] = useState<ScrapedData[]>([]);
-    const [loading, setLoading] = useState(true);
 
     const [stockPrices, setStockPrices] = useState<number[]>([]);
     const [stockTimes, setStockTimes] = useState<string[]>([]);

@@ -1,8 +1,8 @@
 // components/PieChartCard.tsx
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import axios from 'axios';
+
 
 // Register the necessary components
 Chart.register(ArcElement, Tooltip, Legend);
